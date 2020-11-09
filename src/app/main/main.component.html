@@ -1,13 +1,16 @@
-<mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="header-icon" aria-label="Go back homepage">
+    <mat-icon>home</mat-icon>
   </button>
-  <span>Aerabi</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+  <span>Mohammad-Ali Aerabi</span>
+  <span class="header-spacer"></span>
+  <a [href]="githubLink" mat-icon-button class="header-icon favorite-icon" aria-label="Github profile">
+    <mat-icon svgIcon="github"></mat-icon>
+  </a>
+  <a [href]="linkedInLink" mat-icon-button class="header-icon favorite-icon" aria-label="LinkedIn profile">
+    <mat-icon svgIcon="linkedin"></mat-icon>
+  </a>
+  <a [href]="twitterLink" mat-icon-button class="header-icon" aria-label="English Twitter account">
+    <mat-icon svgIcon="twitter"></mat-icon>
+  </a>
 </mat-toolbar>
