@@ -4,10 +4,10 @@ import {MatIconRegistry} from '@angular/material/icon';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.sass']
+  templateUrl: './topbar.component.html',
+  styleUrls: ['./topbar.component.sass']
 })
-export class MainComponent implements OnInit {
+export class TopbarComponent implements OnInit {
   githubLink = 'https://github.com/aerabi';
   linkedInLink = 'https://www.linkedin.com/in/aerabi';
   twitterLink = 'https://mobile.twitter.com/MohammadAliEN';
