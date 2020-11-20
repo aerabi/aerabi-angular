@@ -1,0 +1,16 @@
+<div class="greeting">
+  Hello<span *ngIf="givenName"> {{givenName}}</span>, my name is Mohammad-Ali.
+  <span *ngIf="!givenName">What's your name?</span>
+
+  <form class="greeting-input-form">
+    <mat-form-field class="form-field-given-name">
+      <mat-label>Given Name</mat-label>
+      <input matInput name="givenName" placeholder="Simon" [(ngModel)]="givenName">
+    </mat-form-field>
+
+    <mat-form-field class="form-field-family-name">
+      <mat-label>Family Name</mat-label>
+      <input matInput name="familyName" placeholder="Riley" [(ngModel)]="familyName">
+    </mat-form-field>
+  </form>
+</div>
