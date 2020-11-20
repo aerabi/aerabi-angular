@@ -14,12 +14,21 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
+import { TabsComponent } from './tabs/tabs.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AboutComponent } from './about/about.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ResearchComponent } from './research/research.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
-    GreetingComponent
+    GreetingComponent,
+    TabsComponent,
+    AboutComponent,
+    ProjectsComponent,
+    ResearchComponent
   ],
   imports: [
     AppRoutingModule,
@@ -30,6 +39,7 @@ import {FormsModule} from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatTabsModule,
     MatToolbarModule,
     MatIconModule,
     MatInputModule
