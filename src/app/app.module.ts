@@ -19,6 +19,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ResearchComponent } from './research/research.component';
+import {Store, StoreModule} from '@ngrx/store';
+import {userDataReducer} from './user-data.reducer';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { ResearchComponent } from './research/research.component';
     MatTabsModule,
     MatToolbarModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    StoreModule.forRoot({ userData: userDataReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]
