@@ -13,6 +13,7 @@ export class GreetingComponent implements OnInit {
   givenName: string;
   familyName: string;
   userData$: Observable<UserData>;
+  quickSectionChoice: string;
 
   constructor(private store: Store<{userData: UserData}>) {
     this.userData$ = store.select('userData');
@@ -21,6 +22,7 @@ export class GreetingComponent implements OnInit {
   ngOnInit(): void {
     this.givenName = '';
     this.familyName = '';
+    this.quickSectionChoice = '';
   }
 
   saveUserData(): void {

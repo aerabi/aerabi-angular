@@ -16,3 +16,31 @@
     <button mat-flat-button (click)="saveUserData()">Save</button>
   </form>
 </div>
+
+<div class="greeting" *ngIf="!!givenName">
+  <p>What is the main purpose of your visit, {{givenName}}?</p>
+
+  <button mat-flat-button color="primary" (click)="quickSectionChoice = 'sponsor'">Sponsor Me</button>
+  <button mat-flat-button color="primary" (click)="quickSectionChoice = 'learn'">Learn from Me</button>
+  <button mat-flat-button color="primary" (click)="quickSectionChoice = 'links'">Get in Touch with Me</button>
+</div>
+
+<div class="greeting" *ngIf="quickSectionChoice === 'sponsor'">
+  <a mat-flat-button color="accent" href="https://github.com/sponsors/aerabi" target="_blank">Sponsor Me on GitHub</a>
+</div>
+
+<div class="greeting" *ngIf="quickSectionChoice === 'learn'">
+  <a mat-flat-button color="accent" href="https://medium.com/@aerabi" target="_blank">Read My Medium Articles</a>
+  <a mat-flat-button color="accent" href="https://www.youtube.com/watch?v=z6tjG7JeOeQ" target="_blank">Watch My Video on Middle Persian</a>
+</div>
+
+<div class="greeting" *ngIf="quickSectionChoice === 'links'">
+  <a mat-flat-button color="accent" href="https://www.linkedin.com/in/aerabi/" target="_blank">LinkedIn</a>
+  <a mat-flat-button color="accent" href="https://www.researchgate.net/profile/Mohammad-Ali-Arabi" target="_blank">ResearchGate</a>
+  <a mat-flat-button color="accent" href="https://steamcommunity.com/id/aerabi/" target="_blank">Steam</a>
+  <a mat-flat-button color="accent" href="https://github.com/aerabi" target="_blank">GitHub</a>
+  <a mat-flat-button color="accent" href="https://twitter.com/MohammadAliEN" target="_blank">Twitter EN</a>
+  <a mat-flat-button color="accent" href="https://twitter.com/MohammadAliPER" target="_blank">Twitter FA</a>
+  <a mat-flat-button color="accent" href="https://twitter.com/MohammadAliDACH" target="_blank">Twitter DE</a>
+</div>
+
