@@ -1,5 +1,6 @@
 <div class="greeting">
-  Hello<span *ngIf="givenName"> {{givenName}}</span>, my name is Mohammad-Ali.
+  Welcome {{ isHonorableGuest() ? 'honorable guest' : givenName }}.
+  <span *ngIf="isEveryPleasureAvailableInside()">Every pleasure is available  inside.</span>
   <span *ngIf="!givenName">What's your name?</span>
 
   <form class="greeting-input-form">
@@ -30,8 +31,8 @@
 </div>
 
 <div class="greeting" *ngIf="quickSectionChoice === 'learn'">
-  <a mat-flat-button color="accent" href="https://medium.com/@aerabi" target="_blank">Read My Medium Articles</a>
-  <a mat-flat-button color="accent" href="https://www.youtube.com/watch?v=z6tjG7JeOeQ" target="_blank">Watch My Video on Middle Persian</a>
+  <a mat-flat-button color="accent" href="https://medium.com/@aerabi" target="_blank">Medium</a>
+  <a mat-flat-button color="accent" href="https://www.youtube.com/watch?v=z6tjG7JeOeQ" target="_blank">YouTube</a>
 </div>
 
 <div class="greeting" *ngIf="quickSectionChoice === 'links'">
@@ -39,8 +40,5 @@
   <a mat-flat-button color="accent" href="https://www.researchgate.net/profile/Mohammad-Ali-Arabi" target="_blank">ResearchGate</a>
   <a mat-flat-button color="accent" href="https://steamcommunity.com/id/aerabi/" target="_blank">Steam</a>
   <a mat-flat-button color="accent" href="https://github.com/aerabi" target="_blank">GitHub</a>
-  <a mat-flat-button color="accent" href="https://twitter.com/MohammadAliEN" target="_blank">Twitter EN</a>
-  <a mat-flat-button color="accent" href="https://twitter.com/MohammadAliPER" target="_blank">Twitter FA</a>
-  <a mat-flat-button color="accent" href="https://twitter.com/MohammadAliDACH" target="_blank">Twitter DE</a>
 </div>
 

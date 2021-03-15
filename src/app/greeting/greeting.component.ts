@@ -45,4 +45,16 @@ export class GreetingComponent implements OnInit {
     this.store.dispatch(setFamilyName({familyName}));
   }
 
+  isHonorableGuest(): boolean {
+    if (!this.givenName || this.givenName.length < 3) {
+      return true;
+    }
+    return this.isEveryPleasureAvailableInside();
+  }
+
+  isEveryPleasureAvailableInside(): boolean {
+    const name = `${this.givenName} ${this.familyName}`;
+    const honorableGuestNames = ['Kim Bo Kastekniv', 'Agent 47', 'Tobias Rieper'];
+    return honorableGuestNames.includes(name);
+  }
 }
