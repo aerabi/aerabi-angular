@@ -11,6 +11,11 @@ interface Age {
   seconds: number;
 }
 
+interface Experience {
+  years: number;
+  months: number;
+}
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -19,6 +24,8 @@ interface Age {
 export class AboutComponent implements OnInit {
   readme = '';
   age: Age;
+  experience: Experience;
+  sinceFirstLoF: Experience;
 
   constructor(private http: HttpClient) { }
 
@@ -34,8 +41,26 @@ export class AboutComponent implements OnInit {
     return { years, days, hours, minutes, seconds };
   }
 
+  private static calcExperience(): Experience {
+    const apptecStart = new Date(1560578400 * 1000);
+    const preApptecMoths = 19 + 13 + 2 + 12;
+    const diff = Date.now() - apptecStart.getTime();
+    const appTecMonths = Math.floor(diff / (30.5 * 24 * 60 * 60 * 1000));
+    const totalMoths = preApptecMoths + appTecMonths;
+    return { years: Math.floor(totalMoths / 12), months: totalMoths % 12 };
+  }
+
+  private static calcTimeSinceFirstLineOfCode(): Experience {
+    const fLoC = new Date(1093989600 * 1000);
+    const diff = Date.now() - fLoC.getTime();
+    const totalMoths = Math.floor(diff / (30.5 * 24 * 60 * 60 * 1000));
+    return { years: Math.floor(totalMoths / 12), months: totalMoths % 12 };
+  }
+
   ngOnInit(): void {
     this.age = AboutComponent.calcAge();
+    this.experience = AboutComponent.calcExperience();
+    this.sinceFirstLoF = AboutComponent.calcTimeSinceFirstLineOfCode();
     this.getReadmeRaw()
       .pipe(mergeMap(text => this.renderMarkdown(text)))
       .subscribe(response => this.readme = response);

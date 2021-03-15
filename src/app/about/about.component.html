@@ -2,7 +2,24 @@
 
 <div [innerHTML]="readme"></div>
 
-<p *ngIf="age">
-  I am {{ age.years }} years, {{ age.days }} days, {{ age.hours }} hours, {{ age.minutes }} minutes, and
-  {{ age.seconds }} seconds old.
+<p>
+  Furthermore:
 </p>
+<ul>
+  <li *ngIf="age">
+    I am <b>{{ age.years }}</b> years, <b>{{ age.days }}</b> days, <b>{{ age.hours }}</b> hours, <b>{{ age.minutes }}</b> minutes, and
+    <b>{{ age.seconds }}</b> seconds old.
+  </li>
+  <li *ngIf="experience">
+    I have <b>{{ experience.years }}</b> years and <b>{{ experience.months }}</b> months of professional software development experience
+    (doing a weighted sum for part-time roles, excluding project contracts, student work, and open-source contributions).
+  </li>
+  <li>I have lived in <b>4</b> countries: 🇩🇪 Germany, 🇳🇱 Netherlands, 🇨🇭 Switzerland, and 🇮🇷 Iran.</li>
+  <li>I have lived in <b>8</b> cities: 🇩🇪 Freiburg, 🇳🇱 The Hague (Den Haag), Amsterdam, 🇨🇭 Geneva, 🇮🇷 Tehran, Karaj, Noor, and Qom.</li>
+  <li>I have played <b>8</b> Mortal Kombat games: I, II, III Ultimate, 4, Armageddon, MK9, MKX(L), MK11 + Aftermath.</li>
+  <li>I did a bachelors in Pure Mathematics, a masters in Logic, and another masters in Computer Science. Didn't learn much from the last one.</li>
+  <li *ngIf="sinceFirstLoF">
+    I started coding from the age of 12 (in C), making it <b>{{ sinceFirstLoF.years }}</b> years and <b>{{ sinceFirstLoF.months }}</b> months
+    since my first line of code.
+  </li>
+</ul>
