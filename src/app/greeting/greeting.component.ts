@@ -1,8 +1,9 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {UserData} from '../user-data.reducer';
 import {Store} from '@ngrx/store';
 import {setFamilyName, setGivenName} from '../user-data.actions';
+import {GoogleAnalyticsService} from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-greeting',
@@ -15,7 +16,7 @@ export class GreetingComponent implements OnInit {
   userData$: Observable<UserData>;
   quickSectionChoice: string;
 
-  constructor(private store: Store<{userData: UserData}>) {
+  constructor(private store: Store<{userData: UserData}>, private gaService: GoogleAnalyticsService) {
     this.userData$ = store.select('userData');
   }
 
@@ -33,6 +34,9 @@ export class GreetingComponent implements OnInit {
     if (this.familyName) {
       this.setFamilyName(this.familyName);
     }
+
+    const options = { givenName: this.givenName, familyName: this.familyName };
+    this.gaService.pageView('#save', 'Save Name', undefined, options);
   }
 
   setGivenName(givenName: string): void {

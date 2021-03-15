@@ -1,4 +1,4 @@
-<div class="greeting">
+<div class="greeting" gaCategory="ga_visitor_name">
   Welcome {{ isHonorableGuest() ? 'honorable guest' : givenName }}.
   <span *ngIf="isEveryPleasureAvailableInside()">Every pleasure is available  inside.</span>
   <span *ngIf="!givenName">What's your name?</span>
@@ -6,12 +6,14 @@
   <form class="greeting-input-form">
     <mat-form-field class="form-field-given-name">
       <mat-label>Given Name</mat-label>
-      <input matInput name="givenName" placeholder="Simon" [(ngModel)]="givenName">
+      <input matInput name="givenName" placeholder="Simon" [(ngModel)]="givenName"
+             gaEvent="given_name_blur" gaAction="given_name_blur" gaBind="blur">
     </mat-form-field>
 
     <mat-form-field class="form-field-family-name">
       <mat-label>Family Name</mat-label>
-      <input matInput name="familyName" placeholder="Riley" [(ngModel)]="familyName">
+      <input matInput name="familyName" placeholder="Riley" [(ngModel)]="familyName"
+             gaEvent="family_name_blur" gaAction="given_name_blur" gaBind="blur">
     </mat-form-field>
 
     <button mat-flat-button (click)="saveUserData()">Save</button>

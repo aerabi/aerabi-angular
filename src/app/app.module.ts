@@ -21,6 +21,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ResearchComponent } from './research/research.component';
 import {Store, StoreModule} from '@ngrx/store';
 import {userDataReducer} from './user-data.reducer';
+import {NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule} from 'ngx-google-analytics';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {userDataReducer} from './user-data.reducer';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.ga),
+    NgxGoogleAnalyticsRouterModule,
     FormsModule,
     HttpClientModule,
     MatButtonModule,
