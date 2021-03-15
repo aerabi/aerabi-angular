@@ -1,3 +1,8 @@
 <p></p>
 
 <div [innerHTML]="readme"></div>
+
+<p *ngIf="age">
+  I am {{ age.years }} years, {{ age.days }} days, {{ age.hours }} hours, {{ age.minutes }} minutes, and
+  {{ age.seconds }} seconds old.
+</p>
