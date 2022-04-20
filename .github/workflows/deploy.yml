@@ -20,3 +20,4 @@ jobs:
           folder: docs # The folder the action should deploy.
           repository-name: aerabi/aerabi.github.io # The name of the repository to deploy to.
           clean: true # Whether or not to clean the folder before deploying.
+          token: ${{ secrets.ACCESS_TOKEN }} # The GitHub token to use for deployment.
