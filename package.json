@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build --prod --output-path ../aerabi.github.io/docs/ && cp ../aerabi.github.io/docs/index.html ../aerabi.github.io/docs/404.html",
+    "build": "ng build --prod && cp dist/aerabi-angular/index.html dist/aerabi-angular/404.html",
+    "build:local": "ng build --prod --output-path ../aerabi.github.io/docs/ && cp ../aerabi.github.io/docs/index.html ../aerabi.github.io/docs/404.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
