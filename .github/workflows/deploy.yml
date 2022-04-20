@@ -17,7 +17,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
           branch: master # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          folder: dist/aerabi-angular # The folder the action should deploy.
           repository-name: aerabi/aerabi.github.io # The name of the repository to deploy to.
           clean: true # Whether or not to clean the folder before deploying.
           token: ${{ secrets.ACCESS_TOKEN }} # The GitHub token to use for deployment.
