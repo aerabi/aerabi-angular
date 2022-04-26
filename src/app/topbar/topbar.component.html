@@ -5,6 +5,15 @@
     </button>
     <span>Mohammad-Ali A'râbi</span>
     <span class="header-spacer"></span>
+    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <button mat-stroked-button (click)="logout()">
+        Log out
+      </button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <button mat-stroked-button (click)="login()">Log in</button>
+    </ng-template>
     <a [href]="githubLink" mat-icon-button class="header-icon favorite-icon" aria-label="Github profile">
       <mat-icon svgIcon="github"></mat-icon>
     </a>
