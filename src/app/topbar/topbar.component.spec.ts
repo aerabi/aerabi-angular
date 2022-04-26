@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopbarComponent } from './topbar.component';
+import {AuthModule} from '@auth0/auth0-angular';
+import {environment} from '../../environments/environment';
 
 describe('TopbarComponent', () => {
   let component: TopbarComponent;
@@ -8,7 +10,8 @@ describe('TopbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopbarComponent ]
+      declarations: [ TopbarComponent ],
+      imports: [AuthModule.forRoot(environment.authConfig)],
     })
     .compileComponents();
   });
