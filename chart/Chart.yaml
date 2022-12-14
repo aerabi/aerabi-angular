@@ -1,0 +1,9 @@
+apiVersion: v2
+name: aerabi-com
+description: A Helm chart for aerabi.com website
+
+type: application
+
+version: 0.1.0
+
+appVersion: "0.1.0"
