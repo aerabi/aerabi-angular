@@ -4,6 +4,8 @@ on:
     branches:
       - master
   pull_request:
+    branches:
+      - master
 
 env:
   DOCKER_IMAGE_TAG: ${{ github.ref == 'refs/heads/master' && 'prod-' || 'dev-' }}${{ github.sha }}
@@ -85,8 +87,7 @@ jobs:
         continue-on-error: true
         with:
           image: ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:${{ env.DOCKER_IMAGE_TAG }}
-          severity-threshold: high
-          fail-build: true
+          args: --file=Dockerfile --severity-threshold=high --sarif-file-output=snyk.sarif
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
